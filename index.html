@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Black Events</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      line-height: 1.6;
+      background: #000;
+      color: #fff;
+    }
+    header {
+      background: #111;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #f9c74f;
+    }
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #f9c74f;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #f9c74f;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      color: #fff;
+      padding: 120px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px #000;
+    }
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 2px #000;
+    }
+    .btn {
+      background: #f9c74f;
+      color: #000;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #f9844a;
+    }
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    h2 {
+      color: #f9c74f;
+      margin-bottom: 20px;
+    }
+    .service-list {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .service {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      width: 200px;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(249, 199, 79, 0.3);
+      border: 1px solid #f9c74f;
+    }
+    .about-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 10px;
+      border: 2px solid #f9c74f;
+      box-shadow: 0 0 10px rgba(249, 199, 79, 0.3);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      margin: 0 auto;
+      gap: 15px;
+    }
+    input, select, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background: #222;
+      color: #fff;
+    }
+    button {
+      background: #f9c74f;
+      color: #000;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #f9844a;
+    }
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      border-top: 2px solid #f9c74f;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Black Events</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#booking">Booking</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>  <section id="home" class="hero">
+    <h1>Turning Moments Into Memories</h1>
+    <p>Professional Event Planning for Every Occasion</p>
+    <a href="#booking" class="btn">Book a Consultation</a>
+  </section>  <section id="about">
+    <h2>About Us</h2>
+    <div class="about-content">
+      <p>Black Events is a full-service event planning company dedicated to crafting unforgettable experiences. Our team of creative professionals specializes in weddings, corporate events, birthdays, and bespoke celebrations. From concept to execution, we ensure every detail is handled with care and precision.</p>
+      <p>Our mission is to turn your dreams into reality, one event at a time. Let us take the stress out of planning and bring your vision to life.</p>
+    </div>
+  </section>  <section id="services">
+    <h2>Our Services</h2>
+    <div class="service-list">
+      <div class="service">Weddings</div>
+      <div class="service">Corporate Events</div>
+      <div class="service">Birthday Parties</div>
+    </div>
+<section id="gallery">
+  <h2>Event Gallery</h2>
+  <div class="gallery-grid">
+    <img src="https://images.unsplash.com/photo-1520962911585-cd186c64d5a1?auto=format&fit=crop&w=800&q=80" alt="Countryside Event Venue 1">
+    <img src="https://images.unsplash.com/photo-1589820296159-c7f4c1f7d8ee?auto=format&fit=crop&w=800&q=80" alt="Countryside Event Venue 2">
+    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80" alt="Countryside Event Venue 3">
+    <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=800&q=80" alt="Countryside Event Venue 4">
+  </div>
+</section>
+  </section>  <section id="booking">
+    <h2>Book Your Event</h2>
+    <p>Email: <strong>blackevents2@gmail.com</strong><br>
+    Phone: <strong>+233 53 708 3728</strong> / <strong>+233 50 564 0965</strong></p>
+    <form>
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <input type="tel" placeholder="Phone Number" required />
+      <input type="date" placeholder="Event Date" required />
+      <select required>
+        <option value="">Select Event Type</option>
+        <option value="wedding">Wedding</option>
+        <option value="corporate">Corporate</option>
+        <option value="birthday">Birthday</option>
+        <option value="other">Other</option>
+      </select>
+      <textarea placeholder="Tell us more about your event..." rows="4" required></textarea>
+      <button type="submit">Submit Booking</button>
+    </form>
+  </section>  <section id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>  <footer>
+    <p>&copy; 2025 Black Events. All rights reserved.</p>
+  </footer>
+</body>
+      </html>

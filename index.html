@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,9 +26,18 @@
       border-bottom: 2px solid #f9c74f;
     }
     .logo {
-      font-size: 28px;
-      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 50px;
+      vertical-align: middle;
+    }
+    .logo span {
+      margin-left: 10px;
       color: #f9c74f;
+      font-size: 24px;
+      font-weight: bold;
     }
     nav ul {
       list-style: none;
@@ -147,7 +157,10 @@
 </head>
 <body>
   <header>
-    <div class="logo">Black Events</div>
+    <div class="logo">
+      <img src="https://i.imgur.com/nkKRVHw.jpg" alt="Black Events Logo">
+      <span>Black Events</span>
+    </div>
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
@@ -158,33 +171,42 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-  </header>  <section id="home" class="hero">
+  </header>
+
+  <section id="home" class="hero">
     <h1>Turning Moments Into Memories</h1>
     <p>Professional Event Planning for Every Occasion</p>
     <a href="#booking" class="btn">Book a Consultation</a>
-  </section>  <section id="about">
+  </section>
+
+  <section id="about">
     <h2>About Us</h2>
     <div class="about-content">
       <p>Black Events is a full-service event planning company dedicated to crafting unforgettable experiences. Our team of creative professionals specializes in weddings, corporate events, birthdays, and bespoke celebrations. From concept to execution, we ensure every detail is handled with care and precision.</p>
       <p>Our mission is to turn your dreams into reality, one event at a time. Let us take the stress out of planning and bring your vision to life.</p>
     </div>
-  </section>  <section id="services">
+  </section>
+
+  <section id="services">
     <h2>Our Services</h2>
     <div class="service-list">
       <div class="service">Weddings</div>
       <div class="service">Corporate Events</div>
       <div class="service">Birthday Parties</div>
     </div>
-<section id="gallery">
-  <h2>Event Gallery</h2>
-  <div class="gallery-grid">
-    <img src="https://drive.google.com/uc?export=view&id=140RFYvgjfekr48k-j3QMnHw4bAAhRa34" alt="Event Image 1">
-    <img src="https://drive.google.com/uc?export=view&id=1Q6lCRIiz4o5GY2kfBNSkf3FoAS6xKOjR" alt="Event Image 2">
-    <img src="https://247fotography.ourpixo.com/F6P/assets/img/gallery/XL_1714573669833.jpg" alt="Event Venue 1">
-    <img src="https://247fotography.ourpixo.com/F6P/assets/img/gallery/XL_1714573669848.jpg" alt="Event Venue 2">
-  </div>
-</section>
-  </section>  <section id="booking">
+  </section>
+
+  <section id="gallery">
+    <h2>Event Gallery</h2>
+    <div class="gallery-grid">
+      <img src="https://www.flickr.com/photos/202727064@N02/albums/72177720325823403/1" alt="Event Venue 1">
+      <img src="https://www.flickr.com/photos/202727064@N02/albums/72177720325823403/2" alt="Event Venue 2">
+      <img src="https://www.flickr.com/photos/202727064@N02/albums/72177720325823403/3" alt="Event Venue 3">
+      <img src="https://www.flickr.com/photos/202727064@N02/albums/72177720325823403/4" alt="Event Venue 4">
+    </div>
+  </section>
+
+  <section id="booking">
     <h2>Book Your Event</h2>
     <p>Email: <strong>blackevents2@gmail.com</strong><br>
     Phone: <strong>+233 53 708 3728</strong> / <strong>+233 50 564 0965</strong></p>
@@ -203,7 +225,9 @@
       <textarea placeholder="Tell us more about your event..." rows="4" required></textarea>
       <button type="submit">Submit Booking</button>
     </form>
-  </section>  <section id="contact">
+  </section>
+
+  <section id="contact">
     <h2>Contact Us</h2>
     <form>
       <input type="text" placeholder="Your Name" required />
@@ -211,8 +235,10 @@
       <textarea placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
-  </section>  <footer>
+  </section>
+
+  <footer>
     <p>&copy; 2025 Black Events. All rights reserved.</p>
   </footer>
 </body>
-      </html>
+</html>

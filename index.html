@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="description" content="Black Events - Your trusted event management partner for weddings, corporate events, birthdays and more in Ghana." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Black Events</title>
   <style>
@@ -31,22 +32,35 @@
       font-size: 28px;
       font-weight: bold;
       color: #f9c74f;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    #sidebar {
+    .logo img {
+      height: 40px;
+    }
+
+    .menu-icon {
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* Sidebar on the right */
+    nav#sidebar {
       height: 100%;
       width: 250px;
       position: fixed;
       top: 0;
-      left: -250px;
+      right: -250px;
       background-color: #333;
       transition: 0.3s;
       padding-top: 60px;
       z-index: 1;
     }
 
-    #sidebar a {
-      padding: 8px 8px 8px 32px;
+    nav#sidebar a {
+      padding: 10px 30px;
       text-decoration: none;
       font-size: 18px;
       color: #f9c74f;
@@ -54,32 +68,51 @@
       transition: 0.3s;
     }
 
-    #sidebar a:hover {
+    nav#sidebar a:hover {
       color: #fff;
     }
 
-    #sidebar .closebtn {
-      font-size: 28px;
+    nav#sidebar .closebtn {
+      font-size: 30px;
       position: absolute;
       top: 0;
-      right: 25px;
-      margin-left: 50px;
+      left: 20px;
     }
 
     .page-content {
       display: none;
       padding: 20px;
+      background-color: #0a0f1a;
+      min-height: 100vh;
     }
 
-    .active {
+    .page-content.active {
       display: block;
     }
 
     .hero {
-      background: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      background: url('https://i.imgur.com/UXwObtg.png') no-repeat center center/cover;
+      position: relative;
       color: white;
-      padding: 120px 20px;
+      padding: 120px 20px 60px;
       text-align: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
     }
 
     .hero h1 {
@@ -90,9 +123,6 @@
     .hero p {
       font-size: 20px;
       margin-bottom: 20px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     .btn {
@@ -102,150 +132,173 @@
       text-decoration: none;
       border-radius: 5px;
       font-weight: bold;
+      cursor: pointer;
     }
 
     .btn:hover {
       background: #f9844a;
     }
 
-    input, textarea, select, button {
-      display: block;
-      width: 100%;
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+      margin-top: 20px;
+    }
+
+    form input, form select, form textarea, form button {
       margin: 10px 0;
       padding: 10px;
-      border-radius: 5px;
       border: none;
+      border-radius: 5px;
       font-size: 16px;
     }
 
-    button {
-      background: #f9c74f;
+    form button {
+      background-color: #f9c74f;
       color: #000;
       font-weight: bold;
       cursor: pointer;
     }
 
-    button:hover {
-      background: #f9844a;
+    form button:hover {
+      background-color: #f9844a;
     }
 
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: 10px;
+      margin-top: 20px;
     }
 
     .gallery-grid img {
       width: 100%;
-      border-radius: 5px;
+      border-radius: 10px;
     }
 
     footer {
-      margin-top: 40px;
       text-align: center;
+      padding: 20px;
       font-size: 14px;
-      color: #aaa;
+      color: #ccc;
     }
 
-    @keyframes bgAnimation {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 32px;
+      }
 
-    .animated-bg {
-      background: linear-gradient(-45deg, #2c3e50, #34495e, #2c3e50, #1a1a1a);
-      background-size: 400% 400%;
-      animation: bgAnimation 15s ease infinite;
+      .hero p {
+        font-size: 16px;
+      }
+
+      header {
+        flex-direction: row;
+        justify-content: space-between;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo">Black Events</div>
-    <span style="font-size: 24px; cursor: pointer;" onclick="openNav()">&#9776; Menu</span>
-  </header>
-
-  <!-- Sidebar -->
-  <div id="sidebar">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-    <a href="javascript:void(0)" onclick="showPage('home')">Home</a>
-    <a href="javascript:void(0)" onclick="showPage('booking')">Booking</a>
-    <a href="javascript:void(0)" onclick="showPage('gallery')">Gallery</a>
-    <a href="javascript:void(0)" onclick="showPage('contact')">Contact</a>
+<header>
+  <div class="logo">
+    <img src="https://i.imgur.com/UXwObtg.png" alt="Logo">
+    Black Events
   </div>
+  <span class="menu-icon" onclick="openNav()" aria-label="Open menu">&#9776;</span>
+</header>
 
-  <!-- Pages -->
-  <div id="home" class="page-content active">
-    <section class="hero">
+<!-- Sidebar -->
+<nav id="sidebar" aria-label="Sidebar navigation">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" aria-label="Close menu">×</a>
+  <a href="javascript:void(0)" onclick="showPage('home')">Home</a>
+  <a href="javascript:void(0)" onclick="showPage('booking')">Booking</a>
+  <a href="javascript:void(0)" onclick="showPage('gallery')">Gallery</a>
+  <a href="javascript:void(0)" onclick="showPage('contact')">Contact</a>
+</nav>
+
+<!-- Home -->
+<div id="home" class="page-content active">
+  <section class="hero">
+    <div class="hero-content">
       <h1>Turning Moments Into Memories</h1>
-      <p>At Black Events, we specialize in crafting unforgettable experiences for all your special occasions. Whether it’s a wedding, corporate event, birthday, or private celebration, we bring your vision to life with creativity, elegance, and precision. Trust us to turn your ideas into cherished memories that last a lifetime.</p>
-      <a href="#booking" class="btn">Book a Consultation</a>
-    </section>
-    <footer>© 2025 Black Events. All rights reserved.</footer>
-  </div>
-
-  <div id="booking" class="page-content animated-bg">
-    <h2>Book Your Event</h2>
-    <p>Email: <strong>blackevents2@gmail.com</strong><br>
-    Phone: <strong>+233 53 708 3728</strong> / <strong>+233 50 564 0965</strong></p>
-    <form>
-      <input type="text" placeholder="Full Name" required />
-      <input type="email" placeholder="Email Address" required />
-      <input type="tel" placeholder="Phone Number" required />
-      <input type="date" required />
-      <select required>
-        <option value="">Select Event Type</option>
-        <option value="wedding">Wedding</option>
-        <option value="corporate">Corporate</option>
-        <option value="birthday">Birthday</option>
-        <option value="other">Other</option>
-      </select>
-      <textarea placeholder="Tell us more about your event..." rows="4" required></textarea>
-      <button type="submit">Submit Booking</button>
-    </form>
-    <footer>© 2025 Black Events. All rights reserved.</footer>
-  </div>
-
-  <div id="gallery" class="page-content animated-bg">
-    <h2>Event Gallery</h2>
-    <div class="gallery-grid">
-      <img src="https://i.imgur.com/ITCxxtA.jpeg" alt="Gallery Image 1">
-      <img src="https://i.imgur.com/bhOnBCq.jpeg" alt="Gallery Image 2">
-      <img src="https://i.imgur.com/NVkFLd1.jpeg" alt="Gallery Image 3">
-      <img src="https://i.imgur.com/ITCxxtA.jpeg" alt="Gallery Image 4">
+      <p>Black Events is your trusted partner for unforgettable event experiences—from elegant weddings to cutting-edge corporate functions and intimate parties. We handle everything so you can focus on making memories.</p>
+      <a href="javascript:void(0)" class="btn" onclick="showPage('booking')">Book a Consultation</a>
     </div>
-    <footer>© 2025 Black Events. All rights reserved.</footer>
+  </section>
+  <section style="padding: 30px; background-color: #0a0f1a;">
+    <h2>About Black Events</h2>
+    <p>At Black Events, we believe every moment deserves to be unforgettable. With a team of passionate professionals, we specialize in creating seamless events that reflect your unique vision and leave lasting impressions.</p>
+  </section>
+  <footer>&copy; 2025 Black Events. All rights reserved.</footer>
+</div>
+
+<!-- Booking -->
+<div id="booking" class="page-content">
+  <h2>Book Your Event</h2>
+  <p>Email: <strong>blackevents2@gmail.com</strong><br>
+     Phone: <strong>+233 53 708 3728</strong> / <strong>+233 50 564 0965</strong></p>
+  <form>
+    <input type="text" placeholder="Full Name" required />
+    <input type="email" placeholder="Email Address" required />
+    <input type="tel" placeholder="Phone Number" required />
+    <input type="date" required />
+    <select required>
+      <option value="">Select Event Type</option>
+      <option value="wedding">Wedding</option>
+      <option value="corporate">Corporate</option>
+      <option value="birthday">Birthday</option>
+      <option value="other">Other</option>
+    </select>
+    <textarea placeholder="Tell us more about your event..." rows="4" required></textarea>
+    <button type="submit">Submit Booking</button>
+  </form>
+  <footer>&copy; 2025 Black Events. All rights reserved.</footer>
+</div>
+
+<!-- Gallery -->
+<div id="gallery" class="page-content">
+  <h2>Event Gallery</h2>
+  <div class="gallery-grid">
+    <img src="https://i.imgur.com/ITCxxtA.jpeg" alt="Gallery Image 1">
+    <img src="https://i.imgur.com/bhOnBCq.jpeg" alt="Gallery Image 2">
+    <img src="https://i.imgur.com/NVkFLd1.jpeg" alt="Gallery Image 3">
+    <img src="https://i.imgur.com/eU1jT1y.jpeg" alt="Gallery Image 4">
   </div>
+  <footer>&copy; 2025 Black Events. All rights reserved.</footer>
+</div>
 
-  <div id="contact" class="page-content animated-bg">
-    <h2>Contact Us</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <footer>© 2025 Black Events. All rights reserved.</footer>
-  </div>
+<!-- Contact -->
+<div id="contact" class="page-content">
+  <h2>Contact Us</h2>
+  <form>
+    <input type="text" placeholder="Your Name" required />
+    <input type="email" placeholder="Your Email" required />
+    <textarea placeholder="Your Message" rows="4" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <footer>&copy; 2025 Black Events. All rights reserved.</footer>
+</div>
 
-  <script>
-    function openNav() {
-      document.getElementById("sidebar").style.left = "0";
-    }
+<!-- JavaScript -->
+<script>
+  function openNav() {
+    document.getElementById("sidebar").style.right = "0";
+  }
 
-    function closeNav() {
-      document.getElementById("sidebar").style.left = "-250px";
-    }
+  function closeNav() {
+    document.getElementById("sidebar").style.right = "-250px";
+  }
 
-    function showPage(page) {
-      document.querySelectorAll('.page-content').forEach(function(p) {
-        p.classList.remove('active');
-      });
-      document.getElementById(page).classList.add('active');
-    }
-  </script>
+  function showPage(page) {
+    const pages = document.querySelectorAll('.page-content');
+    pages.forEach(p => p.classList.remove('active'));
+    document.getElementById(page).classList.add('active');
+    closeNav(); // Close sidebar after selecting
+  }
+</script>
 
 </body>
-    </html>
+</html>

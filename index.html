@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
   <title>Black Events</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Black Events - Professional event planning for weddings, corporate functions, and more.">
   <style>
     * {
       margin: 0;
@@ -95,6 +98,7 @@
       text-align: center;
     }
 
+    /* Removed blur; kept subtle overlay for readability */
     .hero::before {
       content: '';
       position: absolute;
@@ -102,8 +106,7 @@
       left: 0;
       height: 100%;
       width: 100%;
-      background: rgba(0, 0, 0, 0.3); /* Less blur */
-      backdrop-filter: blur(2px); /* Reduced blur */
+      background: rgba(0, 0, 0, 0.4);
       z-index: 0;
     }
 
@@ -293,7 +296,7 @@
     const pages = document.querySelectorAll('.page-content');
     pages.forEach(p => p.classList.remove('active'));
     document.getElementById(page).classList.add('active');
-    closeNav(); // Close sidebar after selecting
+    closeNav();
   }
 </script>
 

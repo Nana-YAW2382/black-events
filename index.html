@@ -1,236 +1,258 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <title>Black Events</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Black Events - Professional event planning for weddings, corporate functions, and more.">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Black Events - Professional event planning for weddings, corporate functions, and more." />
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Helvetica Neue', sans-serif;
-    }body {
-  background-color: #fff;
-  color: #333;
-}
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-header {
-  background: #fff;
-  color: #000;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #ccc;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
+    body {
+      background: #111;
+      color: white;
+    }
 
-.logo {
-  font-size: 28px;
-  font-weight: bold;
-  color: #000;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+    header {
+      background: #111;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #f9c74f;
+    }
 
-.logo img {
-  height: 40px;
-}
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #f9c74f;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-.menu-icon {
-  font-size: 28px;
-  cursor: pointer;
-}
+    .logo img {
+      height: 40px;
+    }
 
-nav#sidebar {
-  height: 100%;
-  width: 250px;
-  position: fixed;
-  top: 0;
-  right: -250px;
-  background-color: #f0f0f0;
-  transition: 0.3s;
-  padding-top: 60px;
-  z-index: 1;
-}
+    .menu-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
 
-nav#sidebar a {
-  padding: 10px 30px;
-  text-decoration: none;
-  font-size: 18px;
-  color: #333;
-  display: block;
-  transition: 0.3s;
-}
+    .menu-label {
+      font-size: 14px;
+      color: #f9c74f;
+    }
 
-nav#sidebar a:hover {
-  color: #000;
-}
+    .menu-icon {
+      font-size: 28px;
+      cursor: pointer;
+    }
 
-nav#sidebar .closebtn {
-  font-size: 30px;
-  position: absolute;
-  top: 0;
-  left: 20px;
-}
+    /* Sidebar on the left */
+    nav#sidebar {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: -250px;
+      background-color: #333;
+      transition: 0.3s;
+      padding-top: 60px;
+      z-index: 1;
+    }
 
-.page-content {
-  display: none;
-  padding: 20px;
-  background-color: #fff;
-  min-height: 100vh;
-}
+    nav#sidebar.open {
+      left: 0;
+    }
 
-.page-content.active {
-  display: block;
-}
+    nav#sidebar a {
+      padding: 10px 30px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #f9c74f;
+      display: block;
+      transition: 0.3s;
+    }
 
-.hero {
-  background: url('https://i.imgur.com/UXwObtg.png') no-repeat center center/cover;
-  position: relative;
-  color: white;
-  padding: 120px 20px 60px;
-  text-align: center;
-}
+    nav#sidebar a:hover {
+      color: #fff;
+    }
 
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 0;
-}
+    nav#sidebar .closebtn {
+      font-size: 30px;
+      position: absolute;
+      top: 0;
+      right: 20px;
+    }
 
-.hero-content {
-  position: relative;
-  z-index: 1;
-}
+    .page-content {
+      display: none;
+      padding: 20px;
+      background-color: #0a0f1a;
+      min-height: 100vh;
+    }
 
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
-}
+    .page-content.active {
+      display: block;
+    }
 
-.hero p {
-  font-size: 20px;
-  margin-bottom: 20px;
-}
+    .hero {
+      background: url('https://i.imgur.com/UXwObtg.png') no-repeat center center/cover;
+      position: relative;
+      color: white;
+      padding: 120px 20px 60px;
+      text-align: center;
+    }
 
-.btn {
-  background: #f9c74f;
-  color: #000;
-  padding: 12px 25px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-}
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
 
-.btn:hover {
-  background: #f9844a;
-}
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
 
-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 500px;
-  margin-top: 20px;
-}
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
 
-form input, form select, form textarea, form button {
-  margin: 10px 0;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-}
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
 
-form button {
-  background-color: #f9c74f;
-  color: #000;
-  font-weight: bold;
-  cursor: pointer;
-}
+    .btn {
+      background: #f9c74f;
+      color: #000;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
 
-form button:hover {
-  background-color: #f9844a;
-}
+    .btn:hover {
+      background: #f9844a;
+      transform: scale(1.05);
+    }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 10px;
-  margin-top: 20px;
-}
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+      margin-top: 20px;
+    }
 
-.gallery-grid img {
-  width: 100%;
-  border-radius: 10px;
-}
+    form input, form select, form textarea, form button {
+      margin: 10px 0;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
-  background-color: #f8f8f8;
-  color: #666;
-}
+    form button {
+      background-color: #f9c74f;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
 
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 28px;
-  }
+    form button:hover {
+      background-color: #f9844a;
+      transform: scale(1.05);
+    }
 
-  .hero p {
-    font-size: 16px;
-  }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+      margin-top: 20px;
+    }
 
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 10px;
+    }
 
-  form {
-    width: 100%;
-  }
-}
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #ccc;
+    }
 
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+    }
   </style>
 </head>
-<body><header>
+<body>
+
+<header>
   <div class="logo">
     <img src="https://i.imgur.com/UXwObtg.png" alt="Logo">
     Black Events
   </div>
-  <span class="menu-icon" onclick="openNav()" aria-label="Open menu">&#9776;</span>
-</header><nav id="sidebar" aria-label="Sidebar navigation">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" aria-label="Close menu">&times;</a>
+  <div class="menu-container">
+    <span class="menu-label">Menu</span>
+    <span class="menu-icon" onclick="openNav()" aria-label="Open menu">&#9776;</span>
+  </div>
+</header>
+
+<!-- Sidebar -->
+<nav id="sidebar" aria-label="Sidebar navigation">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" aria-label="Close menu">×</a>
   <a href="javascript:void(0)" onclick="showPage('home')">Home</a>
   <a href="javascript:void(0)" onclick="showPage('booking')">Booking</a>
   <a href="javascript:void(0)" onclick="showPage('gallery')">Gallery</a>
   <a href="javascript:void(0)" onclick="showPage('contact')">Contact</a>
-</nav><div id="home" class="page-content active">
+</nav>
+
+<!-- Home -->
+<div id="home" class="page-content active">
   <section class="hero">
     <div class="hero-content">
       <h1>Turning Moments Into Memories</h1>
-      <p>Black Events is your trusted partner for unforgettable event experiences.</p>
+      <p>Black Events is your trusted partner for unforgettable event experiences—from elegant weddings to cutting-edge corporate functions and intimate parties. We handle everything so you can focus on making memories.</p>
       <a href="javascript:void(0)" class="btn" onclick="showPage('booking')">Book a Consultation</a>
     </div>
   </section>
-  <section style="padding: 30px;">
+  <section style="padding: 30px; background-color: #0a0f1a;">
     <h2>About Black Events</h2>
-    <p>We specialize in creating seamless events that reflect your unique vision and leave lasting impressions.</p>
+    <p>At Black Events, we believe every moment deserves to be unforgettable. With a team of passionate professionals, we specialize in creating seamless events that reflect your unique vision and leave lasting impressions.</p>
   </section>
   <footer>&copy; 2025 Black Events. All rights reserved.</footer>
-</div><div id="booking" class="page-content">
+</div>
+
+<!-- Booking -->
+<div id="booking" class="page-content">
   <h2>Book Your Event</h2>
   <p>Email: <strong>blackevents2@gmail.com</strong><br>
      Phone: <strong>+233 53 708 3728</strong> / <strong>+233 50 564 0965</strong></p>
@@ -250,16 +272,22 @@ footer {
     <button type="submit">Submit Booking</button>
   </form>
   <footer>&copy; 2025 Black Events. All rights reserved.</footer>
-</div><div id="gallery" class="page-content">
+</div>
+
+<!-- Gallery -->
+<div id="gallery" class="page-content">
   <h2>Event Gallery</h2>
   <div class="gallery-grid">
-    <a href="https://i.imgur.com/ITCxxtA.jpeg" data-lightbox="gallery"><img src="https://i.imgur.com/ITCxxtA.jpeg" alt="Gallery Image 1"></a>
-    <a href="https://i.imgur.com/bhOnBCq.jpeg" data-lightbox="gallery"><img src="https://i.imgur.com/bhOnBCq.jpeg" alt="Gallery Image 2"></a>
-    <a href="https://i.imgur.com/NVkFLd1.jpeg" data-lightbox="gallery"><img src="https://i.imgur.com/NVkFLd1.jpeg" alt="Gallery Image 3"></a>
-    <a href="https://i.imgur.com/eU1jT1y.jpeg" data-lightbox="gallery"><img src="https://i.imgur.com/eU1jT1y.jpeg" alt="Gallery Image 4"></a>
+    <img src="https://i.imgur.com/ITCxxtA.jpeg" alt="Gallery Image 1">
+    <img src="https://i.imgur.com/bhOnBCq.jpeg" alt="Gallery Image 2">
+    <img src="https://i.imgur.com/NVkFLd1.jpeg" alt="Gallery Image 3">
+    <img src="https://i.imgur.com/eU1jT1y.jpeg" alt="Gallery Image 4">
   </div>
   <footer>&copy; 2025 Black Events. All rights reserved.</footer>
-</div><div id="contact" class="page-content">
+</div>
+
+<!-- Contact -->
+<div id="contact" class="page-content">
   <h2>Contact Us</h2>
   <form>
     <input type="text" placeholder="Your Name" required />
@@ -268,13 +296,16 @@ footer {
     <button type="submit">Send Message</button>
   </form>
   <footer>&copy; 2025 Black Events. All rights reserved.</footer>
-</div><script>
+</div>
+
+<!-- JavaScript -->
+<script>
   function openNav() {
-    document.getElementById("sidebar").style.right = "0";
+    document.getElementById("sidebar").classList.add("open");
   }
 
   function closeNav() {
-    document.getElementById("sidebar").style.right = "-250px";
+    document.getElementById("sidebar").classList.remove("open");
   }
 
   function showPage(page) {
@@ -283,5 +314,7 @@ footer {
     document.getElementById(page).classList.add('active');
     closeNav();
   }
-</script></body>
-                                                             </html>
+</script>
+
+</body>
+        </html>

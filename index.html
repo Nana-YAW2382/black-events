@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <title>Black Events</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Black Events - Professional event planning for weddings, corporate functions, and more." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Black Events - Professional event planning for weddings, corporate functions, and more.">
   <style>
     * {
       margin: 0;
@@ -41,37 +41,22 @@
       height: 40px;
     }
 
-    .menu-container {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-    }
-
-    .menu-label {
-      font-size: 14px;
-      color: #f9c74f;
-    }
-
     .menu-icon {
       font-size: 28px;
       cursor: pointer;
     }
 
-    /* Sidebar on the left */
+    /* Sidebar on the right */
     nav#sidebar {
       height: 100%;
       width: 250px;
       position: fixed;
       top: 0;
-      left: -250px;
+      right: -250px;
       background-color: #333;
       transition: 0.3s;
       padding-top: 60px;
       z-index: 1;
-    }
-
-    nav#sidebar.open {
-      left: 0;
     }
 
     nav#sidebar a {
@@ -91,7 +76,7 @@
       font-size: 30px;
       position: absolute;
       top: 0;
-      right: 20px;
+      left: 20px;
     }
 
     .page-content {
@@ -113,6 +98,7 @@
       text-align: center;
     }
 
+    /* Removed blur; kept subtle overlay for readability */
     .hero::before {
       content: '';
       position: absolute;
@@ -147,12 +133,10 @@
       border-radius: 5px;
       font-weight: bold;
       cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
     }
 
     .btn:hover {
       background: #f9844a;
-      transform: scale(1.05);
     }
 
     form {
@@ -175,12 +159,10 @@
       color: #000;
       font-weight: bold;
       cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
     }
 
     form button:hover {
       background-color: #f9844a;
-      transform: scale(1.05);
     }
 
     .gallery-grid {
@@ -210,6 +192,11 @@
       .hero p {
         font-size: 16px;
       }
+
+      header {
+        flex-direction: row;
+        justify-content: space-between;
+      }
     }
   </style>
 </head>
@@ -220,10 +207,7 @@
     <img src="https://i.imgur.com/UXwObtg.png" alt="Logo">
     Black Events
   </div>
-  <div class="menu-container">
-    <span class="menu-label">Menu</span>
-    <span class="menu-icon" onclick="openNav()" aria-label="Open menu">&#9776;</span>
-  </div>
+  <span class="menu-icon" onclick="openNav()" aria-label="Open menu">&#9776;</span>
 </header>
 
 <!-- Sidebar -->
@@ -301,11 +285,11 @@
 <!-- JavaScript -->
 <script>
   function openNav() {
-    document.getElementById("sidebar").classList.add("open");
+    document.getElementById("sidebar").style.right = "0";
   }
 
   function closeNav() {
-    document.getElementById("sidebar").classList.remove("open");
+    document.getElementById("sidebar").style.right = "-250px";
   }
 
   function showPage(page) {
@@ -317,4 +301,4 @@
 </script>
 
 </body>
-        </html>
+  </html>

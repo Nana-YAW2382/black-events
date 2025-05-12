@@ -5,198 +5,132 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Black Events - Professional event planning for weddings, corporate functions, and more.">
+  <meta name="keywords" content="Event Planning, Weddings, Corporate Events, Ghana Events, Black Events">
+  <meta name="author" content="Black Events">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
     body {
-      background: #111;
-      color: white;
-    }
-
-    header {
-      background: #111;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0a0f1a;
       color: #fff;
-      padding: 20px;
+    }
+    header {
+      background-color: #121a2a;
+      padding: 10px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 2px solid #f9c74f;
     }
-
     .logo {
-      font-size: 28px;
-      font-weight: bold;
-      color: #f9c74f;
       display: flex;
       align-items: center;
-      gap: 10px;
+      font-weight: bold;
+      font-size: 20px;
     }
-
     .logo img {
       height: 40px;
+      margin-right: 10px;
     }
-
     .menu-icon {
-      font-size: 28px;
+      font-size: 24px;
       cursor: pointer;
     }
-
-    /* Sidebar on the right */
     nav#sidebar {
       height: 100%;
       width: 250px;
       position: fixed;
       top: 0;
       right: -250px;
-      background-color: #333;
+      background-color: #121a2a;
       transition: 0.3s;
       padding-top: 60px;
-      z-index: 1;
+      z-index: 1000;
     }
-
     nav#sidebar a {
-      padding: 10px 30px;
+      padding: 10px 20px;
       text-decoration: none;
       font-size: 18px;
-      color: #f9c74f;
+      color: #fff;
       display: block;
       transition: 0.3s;
     }
-
     nav#sidebar a:hover {
-      color: #fff;
+      background-color: #1f2d47;
     }
-
-    nav#sidebar .closebtn {
-      font-size: 30px;
+    .closebtn {
       position: absolute;
-      top: 0;
-      left: 20px;
+      top: 10px;
+      right: 20px;
+      font-size: 30px;
     }
-
-    .page-content {
+    main.page-content {
       display: none;
       padding: 20px;
-      background-color: #0a0f1a;
-      min-height: 100vh;
     }
-
-    .page-content.active {
+    main.page-content.active {
       display: block;
     }
-
     .hero {
-      background: url('https://i.imgur.com/UXwObtg.png') no-repeat center center/cover;
-      position: relative;
-      color: white;
-      padding: 120px 20px 60px;
+      background: url('https://i.imgur.com/ITCxxtA.jpeg') center/cover no-repeat;
+      padding: 80px 20px;
       text-align: center;
     }
-
-    /* Removed blur; kept subtle overlay for readability */
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 0;
-    }
-
     .hero-content {
-      position: relative;
-      z-index: 1;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 8px;
+      display: inline-block;
     }
-
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 20px;
-      margin-bottom: 20px;
-    }
-
     .btn {
-      background: #f9c74f;
-      color: #000;
-      padding: 12px 25px;
+      background-color: #f39c12;
+      color: #fff;
+      padding: 10px 20px;
       text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      background: #f9844a;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      max-width: 500px;
+      border-radius: 6px;
+      display: inline-block;
       margin-top: 20px;
     }
-
-    form input, form select, form textarea, form button {
-      margin: 10px 0;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
+    form {
+      max-width: 500px;
+      margin: 20px auto;
+      display: flex;
+      flex-direction: column;
     }
-
+    form label {
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+    form input, form select, form textarea {
+      padding: 10px;
+      border-radius: 4px;
+      border: none;
+      background-color: #1c2535;
+      color: #fff;
+    }
     form button {
-      background-color: #f9c74f;
-      color: #000;
-      font-weight: bold;
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #f39c12;
+      border: none;
+      border-radius: 6px;
+      color: #fff;
       cursor: pointer;
     }
-
-    form button:hover {
-      background-color: #f9844a;
-    }
-
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 10px;
-      margin-top: 20px;
+      gap: 15px;
+      padding: 20px 0;
     }
-
     .gallery-grid img {
       width: 100%;
-      border-radius: 10px;
+      border-radius: 8px;
     }
-
     footer {
       text-align: center;
       padding: 20px;
       font-size: 14px;
-      color: #ccc;
-    }
-
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 32px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      header {
-        flex-direction: row;
-        justify-content: space-between;
-      }
+      color: #aaa;
     }
   </style>
 </head>
@@ -207,10 +141,9 @@
     <img src="https://i.imgur.com/UXwObtg.png" alt="Logo">
     Black Events
   </div>
-  <span class="menu-icon" onclick="openNav()" aria-label="Open menu">&#9776;</span>
+  <span class="menu-icon" onclick="openNav()" aria-label="Open menu" aria-expanded="false">&#9776;</span>
 </header>
 
-<!-- Sidebar -->
 <nav id="sidebar" aria-label="Sidebar navigation">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" aria-label="Close menu">×</a>
   <a href="javascript:void(0)" onclick="showPage('home')">Home</a>
@@ -219,83 +152,102 @@
   <a href="javascript:void(0)" onclick="showPage('contact')">Contact</a>
 </nav>
 
-<!-- Home -->
-<div id="home" class="page-content active">
+<main id="home" class="page-content active">
   <section class="hero">
     <div class="hero-content">
       <h1>Turning Moments Into Memories</h1>
-      <p>Black Events is your trusted partner for unforgettable event experiences—from elegant weddings to cutting-edge corporate functions and intimate parties. We handle everything so you can focus on making memories.</p>
+      <p>Black Events is your trusted partner for unforgettable event experiences—from elegant weddings to cutting-edge corporate functions and intimate parties.</p>
       <a href="javascript:void(0)" class="btn" onclick="showPage('booking')">Book a Consultation</a>
     </div>
   </section>
   <section style="padding: 30px; background-color: #0a0f1a;">
     <h2>About Black Events</h2>
-    <p>At Black Events, we believe every moment deserves to be unforgettable. With a team of passionate professionals, we specialize in creating seamless events that reflect your unique vision and leave lasting impressions.</p>
+    <p>We specialize in creating seamless events that reflect your unique vision and leave lasting impressions.</p>
   </section>
   <footer>&copy; 2025 Black Events. All rights reserved.</footer>
-</div>
+</main>
 
-<!-- Booking -->
-<div id="booking" class="page-content">
+<main id="booking" class="page-content">
   <h2>Book Your Event</h2>
   <p>Email: <strong>blackevents2@gmail.com</strong><br>
      Phone: <strong>+233 53 708 3728</strong> / <strong>+233 50 564 0965</strong></p>
-  <form>
-    <input type="text" placeholder="Full Name" required />
-    <input type="email" placeholder="Email Address" required />
-    <input type="tel" placeholder="Phone Number" required />
-    <input type="date" required />
-    <select required>
+  <form action="https://formspree.io/f/xzzraypj" method="POST">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" required />
+
+    <label for="date">Event Date</label>
+    <input type="date" id="date" name="date" required />
+
+    <label for="type">Event Type</label>
+    <select id="type" name="type" required>
       <option value="">Select Event Type</option>
       <option value="wedding">Wedding</option>
       <option value="corporate">Corporate</option>
       <option value="birthday">Birthday</option>
       <option value="other">Other</option>
     </select>
-    <textarea placeholder="Tell us more about your event..." rows="4" required></textarea>
+
+    <label for="details">Event Details</label>
+    <textarea id="details" name="details" rows="4" required></textarea>
+
     <button type="submit">Submit Booking</button>
   </form>
   <footer>&copy; 2025 Black Events. All rights reserved.</footer>
-</div>
+</main>
 
-<!-- Gallery -->
-<div id="gallery" class="page-content">
+<main id="gallery" class="page-content">
   <h2>Event Gallery</h2>
   <div class="gallery-grid">
-    <img src="https://i.imgur.com/ITCxxtA.jpeg" alt="Gallery Image 1">
-    <img src="https://i.imgur.com/bhOnBCq.jpeg" alt="Gallery Image 2">
-    <img src="https://i.imgur.com/NVkFLd1.jpeg" alt="Gallery Image 3">
-    <img src="https://i.imgur.com/eU1jT1y.jpeg" alt="Gallery Image 4">
+    <img src="https://i.imgur.com/ITCxxtA.jpeg" alt="Gallery Image 1" loading="lazy">
+    <img src="https://i.imgur.com/bhOnBCq.jpeg" alt="Gallery Image 2" loading="lazy">
+    <img src="https://i.imgur.com/NVkFLd1.jpeg" alt="Gallery Image 3" loading="lazy">
+    <img src="https://i.imgur.com/eU1jT1y.jpeg" alt="Gallery Image 4" loading="lazy">
   </div>
   <footer>&copy; 2025 Black Events. All rights reserved.</footer>
-</div>
+</main>
 
-<!-- Contact -->
-<div id="contact" class="page-content">
+<main id="contact" class="page-content">
   <h2>Contact Us</h2>
-  <form>
-    <input type="text" placeholder="Your Name" required />
-    <input type="email" placeholder="Your Email" required />
-    <textarea placeholder="Your Message" rows="4" required></textarea>
+  <form action="https://formspree.io/f/xzzraypj" method="POST">
+    <label for="cname">Your Name</label>
+    <input type="text" id="cname" name="name" required />
+
+    <label for="cemail">Your Email</label>
+    <input type="email" id="cemail" name="email" required />
+
+    <label for="cmessage">Your Message</label>
+    <textarea id="cmessage" name="message" rows="4" required></textarea>
+
     <button type="submit">Send Message</button>
   </form>
   <footer>&copy; 2025 Black Events. All rights reserved.</footer>
-</div>
+</main>
 
-<!-- JavaScript -->
 <script>
   function openNav() {
-    document.getElementById("sidebar").style.right = "0";
+    const sidebar = document.getElementById("sidebar");
+    sidebar.style.right = "0";
+    document.querySelector('.menu-icon').setAttribute("aria-expanded", "true");
   }
 
   function closeNav() {
-    document.getElementById("sidebar").style.right = "-250px";
+    const sidebar = document.getElementById("sidebar");
+    sidebar.style.right = "-250px";
+    document.querySelector('.menu-icon').setAttribute("aria-expanded", "false");
   }
 
   function showPage(page) {
     const pages = document.querySelectorAll('.page-content');
     pages.forEach(p => p.classList.remove('active'));
-    document.getElementById(page).classList.add('active');
+    const current = document.getElementById(page);
+    current.classList.add('active');
+    current.scrollIntoView({ behavior: 'smooth' });
     closeNav();
   }
 </script>

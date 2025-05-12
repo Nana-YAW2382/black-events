@@ -243,3 +243,25 @@
 <script>
   function openNav() {
     const sidebar = document.getElementById("sidebar");
+    sidebar.style.right = "0";
+    document.querySelector('.menu-icon').setAttribute("aria-expanded", "true");
+  }
+
+  function closeNav() {
+    const sidebar = document.getElementById("sidebar");
+    sidebar.style.right = "-250px";
+    document.querySelector('.menu-icon').setAttribute("aria-expanded", "false");
+  }
+
+  function showPage(page) {
+    const pages = document.querySelectorAll('.page-content');
+    pages.forEach(p => p.classList.remove('active'));
+    const current = document.getElementById(page);
+    current.classList.add('active');
+    current.scrollIntoView({ behavior: 'smooth' });
+    closeNav();
+  }
+</script>
+
+</body>
+</html>

@@ -10,22 +10,22 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: Arial, sans-serif;
       background-color: #0a0f1a;
       color: #fff;
     }
     header {
-      background-color: #121a2a;
+      background-color: #111;
       padding: 10px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     .logo {
+      font-size: 20px;
+      font-weight: bold;
       display: flex;
       align-items: center;
-      font-weight: bold;
-      font-size: 20px;
     }
     .logo img {
       height: 40px;
@@ -35,18 +35,18 @@
       font-size: 24px;
       cursor: pointer;
     }
-    nav#sidebar {
+    #sidebar {
       height: 100%;
       width: 250px;
       position: fixed;
       top: 0;
       right: -250px;
-      background-color: #121a2a;
+      background-color: #111;
+      overflow-x: hidden;
       transition: 0.3s;
       padding-top: 60px;
-      z-index: 1000;
     }
-    nav#sidebar a {
+    #sidebar a {
       padding: 10px 20px;
       text-decoration: none;
       font-size: 18px;
@@ -54,13 +54,13 @@
       display: block;
       transition: 0.3s;
     }
-    nav#sidebar a:hover {
-      background-color: #1f2d47;
+    #sidebar a:hover {
+      background-color: #575757;
     }
     .closebtn {
       position: absolute;
       top: 10px;
-      right: 20px;
+      left: 20px;
       font-size: 30px;
     }
     main.page-content {
@@ -77,60 +77,61 @@
     }
     .hero-content {
       background-color: rgba(0, 0, 0, 0.6);
-      padding: 40px;
-      border-radius: 8px;
       display: inline-block;
+      padding: 30px;
+      border-radius: 10px;
     }
     .btn {
-      background-color: #f39c12;
-      color: #fff;
+      background-color: #d3a625;
+      color: #000;
       padding: 10px 20px;
-      text-decoration: none;
+      border: none;
       border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
       display: inline-block;
-      margin-top: 20px;
+      margin-top: 15px;
     }
     form {
-      max-width: 500px;
-      margin: 20px auto;
+      max-width: 600px;
+      margin: auto;
       display: flex;
       flex-direction: column;
     }
     form label {
       margin-top: 10px;
-      margin-bottom: 5px;
     }
-    form input, form select, form textarea {
+    form input, form textarea, form select {
       padding: 10px;
-      border-radius: 4px;
       border: none;
-      background-color: #1c2535;
-      color: #fff;
+      border-radius: 4px;
+      margin-top: 5px;
     }
     form button {
-      margin-top: 15px;
+      margin-top: 20px;
       padding: 10px;
-      background-color: #f39c12;
+      background-color: #d3a625;
+      color: #000;
       border: none;
-      border-radius: 6px;
-      color: #fff;
+      border-radius: 4px;
+      font-weight: bold;
       cursor: pointer;
     }
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 15px;
-      padding: 20px 0;
+      padding: 20px;
     }
     .gallery-grid img {
       width: 100%;
       border-radius: 8px;
+      object-fit: cover;
     }
     footer {
       text-align: center;
       padding: 20px;
-      font-size: 14px;
-      color: #aaa;
+      background-color: #111;
     }
   </style>
 </head>
@@ -208,6 +209,13 @@
     <img src="https://i.imgur.com/bhOnBCq.jpeg" alt="Gallery Image 2" loading="lazy">
     <img src="https://i.imgur.com/NVkFLd1.jpeg" alt="Gallery Image 3" loading="lazy">
     <img src="https://i.imgur.com/eU1jT1y.jpeg" alt="Gallery Image 4" loading="lazy">
+    <img src="https://i.postimg.cc/43qFVSMX/1H0A1247.jpg" alt="Gallery Image 5" loading="lazy">
+    <img src="https://i.postimg.cc/SKJvXhgZ/1H0A1022.jpg" alt="Gallery Image 6" loading="lazy">
+    <img src="https://i.postimg.cc/7ZPck70r/Screenshot-20250505-025606-Whats-App.png" alt="Gallery Image 7" loading="lazy">
+    <img src="https://i.postimg.cc/kM8LF7qz/Screenshot-20250505-025821-Whats-App.png" alt="Gallery Image 8" loading="lazy">
+    <img src="https://i.postimg.cc/2ypMRKF0/Screenshot-20250505-025650-Whats-App.png" alt="Gallery Image 9" loading="lazy">
+    <img src="https://i.postimg.cc/Gp2ZkYmx/Screenshot-20250505-025629-Whats-App.png" alt="Gallery Image 10" loading="lazy">
+    <img src="https://i.postimg.cc/bNfcKsmq/1H0A1544.jpg" alt="Gallery Image 11" loading="lazy">
   </div>
   <footer>&copy; 2025 Black Events. All rights reserved.</footer>
 </main>
@@ -231,17 +239,13 @@
 
 <script>
   function openNav() {
-    const sidebar = document.getElementById("sidebar");
-    sidebar.style.right = "0";
+    document.getElementById("sidebar").style.right = "0";
     document.querySelector('.menu-icon').setAttribute("aria-expanded", "true");
   }
-
   function closeNav() {
-    const sidebar = document.getElementById("sidebar");
-    sidebar.style.right = "-250px";
+    document.getElementById("sidebar").style.right = "-250px";
     document.querySelector('.menu-icon').setAttribute("aria-expanded", "false");
   }
-
   function showPage(page) {
     const pages = document.querySelectorAll('.page-content');
     pages.forEach(p => p.classList.remove('active'));
@@ -253,4 +257,4 @@
 </script>
 
 </body>
-  </html>
+</html>
